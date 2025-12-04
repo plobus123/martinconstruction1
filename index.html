@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Martin Construction | Premier General Contractors</title>
+    <meta name="description" content="A Class Licensed General Contractors specializing in insurance restoration, remodeling, and structural repairs." />
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              stone: {
+                850: '#1c1917',
+                950: '#0c0a09',
+              },
+              bronze: {
+                500: '#a18058',
+                600: '#8c6b46',
+              }
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'fade-in': 'fadeIn 1s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-stone-50 text-stone-900 antialiased selection:bg-bronze-500 selection:text-white">
+
+    <!-- Navbar -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent border-transparent py-6">
+        <div class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="group relative z-50">
+                <div class="flex flex-col items-start leading-none">
+                    <span id="logo-text" class="font-serif text-2xl lg:text-3xl font-bold tracking-tight transition-colors text-stone-900 lg:text-white">
+                        MARTIN
+                    </span>
+                    <span id="logo-subtext" class="text-[10px] tracking-[0.25em] uppercase font-sans font-medium mt-1 transition-colors text-stone-800 lg:text-stone-200">
+                        Construction
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-10">
+                <a href="#problem" class="nav-link text-sm uppercase tracking-widest font-medium relative group py-2 text-stone-200 hover:text-white">
+                    Expertise
+                    <span class="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 group-hover:w-full bg-white nav-underline"></span>
+                </a>
+                <a href="#credentials" class="nav-link text-sm uppercase tracking-widest font-medium relative group py-2 text-stone-200 hover:text-white">
+                    Credentials
+                    <span class="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 group-hover:w-full bg-white nav-underline"></span>
+                </a>
+                <a href="#projects" class="nav-link text-sm uppercase tracking-widest font-medium relative group py-2 text-stone-200 hover:text-white">
+                    Projects
+                    <span class="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 group-hover:w-full bg-white nav-underline"></span>
+                </a>
+                <a href="#offer" class="nav-link text-sm uppercase tracking-widest font-medium relative group py-2 text-stone-200 hover:text-white">
+                    Offer
+                    <span class="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 group-hover:w-full bg-white nav-underline"></span>
+                </a>
+                
+                <a href="#contact" id="nav-cta" class="px-6 py-3 text-xs uppercase tracking-widest font-bold border transition-all duration-300 hover:scale-105 border-white text-white hover:bg-white hover:text-stone-900">
+                    Book Appointment
+                </a>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-toggle" class="lg:hidden relative z-50 p-2" aria-label="Toggle Menu">
+                <i data-lucide="menu" id="menu-icon" class="w-6 h-6 text-stone-900 lg:text-white"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-stone-50 z-40 flex flex-col items-center justify-center transition-transform duration-500 ease-in-out translate-x-full">
+            <nav class="flex flex-col items-center gap-8 text-center">
+                <a href="#problem" class="mobile-link font-serif text-3xl text-stone-900 hover:text-bronze-600 transition-colors">Expertise</a>
+                <a href="#credentials" class="mobile-link font-serif text-3xl text-stone-900 hover:text-bronze-600 transition-colors">Credentials</a>
+                <a href="#projects" class="mobile-link font-serif text-3xl text-stone-900 hover:text-bronze-600 transition-colors">Projects</a>
+                <a href="#offer" class="mobile-link font-serif text-3xl text-stone-900 hover:text-bronze-600 transition-colors">Offer</a>
+                
+                <a href="#contact" class="mobile-link mt-4 px-8 py-4 bg-stone-900 text-white text-sm uppercase tracking-widest hover:bg-bronze-600 transition-colors">
+                    Book Appointment
+                </a>
+                <a href="tel:7205840716" class="flex items-center gap-2 text-stone-500 mt-8">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    <span class="text-sm tracking-wide">720-584-0716</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1556912173-3db9963f6fec?q=80&w=2070&auto=format&fit=crop" 
+                    alt="Luxury Kitchen Renovation" 
+                    class="w-full h-full object-cover opacity-100 scale-105 animate-[fadeIn_2s_ease-out]">
+                <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+                <div class="absolute inset-0 bg-black/50"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-stone-900/40"></div>
+            </div>
+
+            <div class="relative z-10 container mx-auto px-6 lg:px-12 text-center text-white">
+                <h2 class="text-xs md:text-sm font-sans uppercase tracking-[0.3em] mb-6 text-stone-300 animate-fade-in-up">
+                    Refined General Contracting
+                </h2>
+                
+                <h1 class="font-serif text-5xl md:text-7xl lg:text-9xl mb-8 leading-tight animate-fade-in-up" style="animation-delay: 0.2s">
+                    Reimagine <br />
+                    <span class="italic text-bronze-500">Your Space</span>
+                </h1>
+                
+                <p class="max-w-xl mx-auto font-sans text-stone-200 text-lg md:text-xl font-light mb-12 leading-relaxed animate-fade-in-up" style="animation-delay: 0.4s">
+                    From complex structural repairs to luxury remodeling, we execute your vision with precision, transparency, and master craftsmanship.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up" style="animation-delay: 0.6s">
+                    <a href="#offer" class="px-8 py-4 bg-white text-stone-950 font-sans text-xs uppercase tracking-widest font-bold hover:bg-bronze-500 hover:text-white transition-all duration-300 w-full sm:w-auto min-w-[200px]">
+                        Claim 20% Offer
+                    </a>
+                    <a href="#problem" class="px-8 py-4 border border-white/30 backdrop-blur-sm text-white font-sans text-xs uppercase tracking-widest font-bold hover:bg-white hover:text-stone-950 transition-all duration-300 w-full sm:w-auto min-w-[200px]">
+                        Our Expertise
+                    </a>
+                </div>
+            </div>
+
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
+                <i data-lucide="arrow-down" class="w-6 h-6"></i>
+            </div>
+        </section>
+
+        <!-- Problem & Solution Section -->
+        <section id="problem" class="py-24 lg:py-32 bg-stone-50 text-stone-900">
+            <div class="container mx-auto px-6 lg:px-12">
+                
+                <div class="flex flex-col lg:flex-row justify-between items-end mb-20 gap-10">
+                    <div class="lg:w-1/2">
+                        <span class="block text-xs font-bold uppercase tracking-widest text-bronze-600 mb-4">The Challenge</span>
+                        <h2 class="font-serif text-4xl lg:text-6xl leading-tight">
+                            Complex Projects <br />
+                            <span class="italic text-stone-500">Require</span> Expert Hands
+                        </h2>
+                    </div>
+                    <div class="lg:w-1/3 text-stone-600 leading-relaxed font-light">
+                        <p>
+                            Whether you are facing an insurance nightmare or seeking to transform your property, the stakes are high. You need more than a builder—you need a partner who understands the intricacies of restoration and luxury design.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-stone-200 border border-stone-200 mb-32">
+                    <!-- Item 1 -->
+                    <div class="bg-white p-10 lg:p-12 hover:bg-stone-50 transition-colors duration-300 group">
+                        <div class="mb-6 opacity-80 group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="shield-alert" class="w-8 h-8 text-bronze-600"></i>
+                        </div>
+                        <h3 class="font-serif text-xl mb-4">Insurance Restoration</h3>
+                        <p class="text-sm text-stone-500 leading-relaxed">Navigating complex claims for fire, flood, or storm damage requires expertise that most don't have.</p>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="bg-white p-10 lg:p-12 hover:bg-stone-50 transition-colors duration-300 group">
+                        <div class="mb-6 opacity-80 group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="ruler" class="w-8 h-8 text-bronze-600"></i>
+                        </div>
+                        <h3 class="font-serif text-xl mb-4">Structural Repairs</h3>
+                        <p class="text-sm text-stone-500 leading-relaxed">Foundational issues and load-bearing modifications demand absolute precision and safety.</p>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="bg-white p-10 lg:p-12 hover:bg-stone-50 transition-colors duration-300 group">
+                        <div class="mb-6 opacity-80 group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="home" class="w-8 h-8 text-bronze-600"></i>
+                        </div>
+                        <h3 class="font-serif text-xl mb-4">General Remodeling</h3>
+                        <p class="text-sm text-stone-500 leading-relaxed">Maximizing space without moving is an art. Don't settle for cookie-cutter renovations.</p>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="bg-white p-10 lg:p-12 hover:bg-stone-50 transition-colors duration-300 group">
+                        <div class="mb-6 opacity-80 group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="building-2" class="w-8 h-8 text-bronze-600"></i>
+                        </div>
+                        <h3 class="font-serif text-xl mb-4">Commercial Construction</h3>
+                        <p class="text-sm text-stone-500 leading-relaxed">Delays in commercial projects cost more than just money—they cost reputation.</p>
+                    </div>
+                </div>
+
+                <!-- Solution Block -->
+                <div class="relative bg-stone-900 text-white p-8 md:p-16 lg:p-24 overflow-hidden">
+                    <div class="absolute top-0 right-0 w-full lg:w-1/2 h-full opacity-20 lg:opacity-40">
+                        <img src="https://images.unsplash.com/photo-1531835551805-16d864c8d311?auto=format&fit=crop&w=1600&q=80" 
+                            alt="Construction Detail" class="w-full h-full object-cover grayscale">
+                    </div>
+
+                    <div class="relative z-10 lg:w-1/2">
+                        <span class="block text-xs font-bold uppercase tracking-widest text-bronze-500 mb-6">The Solution</span>
+                        <h2 class="font-serif text-3xl md:text-5xl mb-8">Martin Construction</h2>
+                        <p class="text-stone-300 text-lg mb-8 leading-relaxed">
+                            We are the answer to your property's most demanding needs. As your dedicated general contractors, we blend technical mastery with aesthetic vision to deliver results that endure.
+                        </p>
+                        
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-bronze-500"></i>
+                                <span class="text-sm uppercase tracking-wide font-medium">Comprehensive Project Management</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-bronze-500"></i>
+                                <span class="text-sm uppercase tracking-wide font-medium">Seamless Insurance Coordination</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-bronze-500"></i>
+                                <span class="text-sm uppercase tracking-wide font-medium">Uncompromising Quality Control</span>
+                            </li>
+                        </ul>
+
+                        <a href="#contact" class="inline-block border-b border-white pb-1 text-sm uppercase tracking-widest hover:text-bronze-500 hover:border-bronze-500 transition-colors">
+                            Start Your Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credentials Section -->
+        <section id="credentials" class="py-24 bg-white">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center mb-16">
+                    <span class="text-xs font-bold uppercase tracking-widest text-stone-400">Our Qualifications</span>
+                    <h2 class="font-serif text-4xl mt-4 text-stone-900">Verified Excellence</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-stone-50 flex items-center justify-center mb-6 border border-stone-200">
+                            <i data-lucide="award" class="w-8 h-8 text-stone-800"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl mb-3">A-Class Licensed</h3>
+                        <p class="text-stone-500 text-sm max-w-xs mx-auto">
+                            Fully licensed and authorized for major commercial and residential structural projects. We operate at the highest level of regulation.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-stone-50 flex items-center justify-center mb-6 border border-stone-200">
+                            <i data-lucide="droplets" class="w-8 h-8 text-stone-800"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl mb-3">Restoration Experts</h3>
+                        <p class="text-stone-500 text-sm max-w-xs mx-auto">
+                            Specialized certification in Fire & Flood restoration. We don't just repair; we restore your property to its pre-loss glory.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-stone-50 flex items-center justify-center mb-6 border border-stone-200">
+                            <i data-lucide="shield-check" class="w-8 h-8 text-stone-800"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl mb-3">Fully Insured</h3>
+                        <p class="text-stone-500 text-sm max-w-xs mx-auto">
+                            Comprehensive liability coverage for your peace of mind. Your property and our team are protected at every step.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w-full h-px bg-stone-200 mt-24"></div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="py-24 bg-stone-100">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="relative">
+                        <div class="aspect-[4/5] bg-stone-300 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581094794329-cd1096a78432?auto=format&fit=crop&w=1600&q=80" 
+                                alt="Construction Planning and Blueprints" 
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="absolute -bottom-10 -right-6 md:-right-10 bg-white p-8 shadow-xl max-w-xs border-l-4 border-bronze-500">
+                            <p class="font-serif text-xl italic text-stone-800">"Precision is the difference between good and exceptional."</p>
+                        </div>
+                    </div>
+
+                    <div class="pl-0 lg:pl-12">
+                        <span class="text-xs font-bold uppercase tracking-widest text-bronze-600 mb-4 block">Why Choose Us</span>
+                        <h2 class="font-serif text-4xl lg:text-5xl mb-8 leading-tight text-stone-900">The Martin Standard</h2>
+                        
+                        <div class="space-y-10">
+                            <div class="flex gap-6">
+                                <span class="font-serif text-4xl text-stone-300">01</span>
+                                <div>
+                                    <h4 class="text-lg font-bold uppercase tracking-wide mb-2">Transparency & Budget</h4>
+                                    <p class="text-stone-600 font-light">No hidden fees. No surprise costs. We provide detailed estimates and stick to the budget we agree upon.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <span class="font-serif text-4xl text-stone-300">02</span>
+                                <div>
+                                    <h4 class="text-lg font-bold uppercase tracking-wide mb-2">Insurance Advocacy</h4>
+                                    <p class="text-stone-600 font-light">We speak the language of adjusters. We handle the paperwork and negotiations to ensure you get the coverage you deserve.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <span class="font-serif text-4xl text-stone-300">03</span>
+                                <div>
+                                    <h4 class="text-lg font-bold uppercase tracking-wide mb-2">Financing Options</h4>
+                                    <p class="text-stone-600 font-light">Quality shouldn't be out of reach. We offer flexible financing plans to help you achieve your vision immediately.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof & Gallery -->
+        <section id="projects" class="py-24 bg-stone-900 text-white relative">
+            <div class="container mx-auto px-6 lg:px-12">
+                <!-- Reviews -->
+                <div class="text-center mb-16">
+                    <h2 class="font-serif text-3xl md:text-5xl mb-6">Clients Speak</h2>
+                    <div class="w-20 h-1 bg-bronze-500 mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+                    <!-- Review 1 -->
+                    <div class="bg-stone-800 p-8 md:p-10 border border-stone-700 relative">
+                        <div class="flex gap-1 mb-6 text-bronze-500">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="font-serif text-xl italic text-stone-300 mb-8 leading-relaxed">"Martin Construction transformed our flood-damaged basement into a luxury living space. Dealing with insurance was a nightmare until they stepped in."</p>
+                        <div>
+                            <p class="text-sm font-bold uppercase tracking-widest text-white">Sarah Jenkins</p>
+                            <p class="text-xs text-stone-500 mt-1">Homeowner, Denver</p>
+                        </div>
+                        <div class="absolute top-4 right-6 text-8xl font-serif text-stone-700 opacity-20 pointer-events-none">"</div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="bg-stone-800 p-8 md:p-10 border border-stone-700 relative">
+                        <div class="flex gap-1 mb-6 text-bronze-500">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="font-serif text-xl italic text-stone-300 mb-8 leading-relaxed">"On time and under budget. Their transparency throughout the structural repair process was refreshing. Highly recommended for complex jobs."</p>
+                        <div>
+                            <p class="text-sm font-bold uppercase tracking-widest text-white">Michael Ross</p>
+                            <p class="text-xs text-stone-500 mt-1">Commercial Developer</p>
+                        </div>
+                        <div class="absolute top-4 right-6 text-8xl font-serif text-stone-700 opacity-20 pointer-events-none">"</div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="bg-stone-800 p-8 md:p-10 border border-stone-700 relative">
+                        <div class="flex gap-1 mb-6 text-bronze-500">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="font-serif text-xl italic text-stone-300 mb-8 leading-relaxed">"The attention to detail is unmatched. They maximized our small layout in ways we didn't think possible. Truly an A-class team."</p>
+                        <div>
+                            <p class="text-sm font-bold uppercase tracking-widest text-white">Elena V.</p>
+                            <p class="text-xs text-stone-500 mt-1">Interior Renovation</p>
+                        </div>
+                        <div class="absolute top-4 right-6 text-8xl font-serif text-stone-700 opacity-20 pointer-events-none">"</div>
+                    </div>
+                </div>
+
+                <!-- Gallery -->
+                <div class="text-center mb-12">
+                    <span class="text-bronze-500 text-xs font-bold uppercase tracking-[0.2em] mb-4 block">Our Portfolio</span>
+                    <h3 class="font-serif text-3xl md:text-4xl">Featured Projects</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+                    <div class="gallery-item group relative h-72 md:h-80 overflow-hidden cursor-pointer bg-stone-800" data-src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" alt="Project 1">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item group relative h-72 md:h-80 overflow-hidden cursor-pointer bg-stone-800" data-src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" alt="Project 2">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item group relative h-72 md:h-80 overflow-hidden cursor-pointer bg-stone-800" data-src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80">
+                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" alt="Project 3">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item group relative h-72 md:h-80 overflow-hidden cursor-pointer bg-stone-800" data-src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80">
+                        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" alt="Project 4">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item group relative h-72 md:h-80 overflow-hidden cursor-pointer bg-stone-800" data-src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80">
+                        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" alt="Project 5">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item group relative h-72 md:h-80 overflow-hidden cursor-pointer bg-stone-800" data-src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=800&q=80">
+                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" alt="Project 6">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="#contact" class="inline-block border-b border-stone-600 pb-1 text-sm uppercase tracking-widest text-stone-400 hover:text-white hover:border-white transition-colors">
+                        View All Projects
+                    </a>
+                </div>
+            </div>
+
+            <!-- Lightbox Modal -->
+            <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 lg:p-12 animate-fade-in hidden">
+                <button id="close-lightbox" class="absolute top-6 right-6 text-stone-400 hover:text-white transition-colors p-2 z-10">
+                    <i data-lucide="x" class="w-8 h-8"></i>
+                </button>
+                <img id="lightbox-img" src="" alt="Project Detail" class="max-w-full max-h-full object-contain shadow-2xl">
+            </div>
+        </section>
+
+        <!-- Offer Section -->
+        <section id="offer" class="py-20 bg-bronze-600 text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-multiply"></div>
+            
+            <div class="container mx-auto px-6 lg:px-12 relative z-10 text-center">
+                <div class="inline-flex items-center gap-2 border border-white/30 px-4 py-2 rounded-full mb-8 bg-white/10 backdrop-blur-sm">
+                    <i data-lucide="timer" class="w-4 h-4"></i>
+                    <span class="text-xs font-bold uppercase tracking-widest">Limited Time Offer</span>
+                </div>
+
+                <h2 class="font-serif text-5xl md:text-7xl mb-6">20% OFF</h2>
+                <p class="font-sans text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto">
+                    All projects booked through the end of the year receive an exclusive 20% discount. 
+                </p>
+                
+                <p class="text-sm uppercase tracking-widest opacity-90 mb-10">Act Now — Offer Expires Soon</p>
+
+                <a href="#contact" class="inline-block bg-white text-stone-900 px-10 py-5 text-sm font-bold uppercase tracking-widest hover:bg-stone-900 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Secure Your Rate
+                </a>
+            </div>
+        </section>
+
+        <!-- Guarantee Section -->
+        <section class="py-24 bg-white border-b border-stone-100">
+            <div class="container mx-auto px-6 lg:px-12 flex flex-col items-center text-center">
+                <div class="w-16 h-16 border-2 border-stone-900 rounded-full flex items-center justify-center mb-6">
+                    <span class="font-serif text-2xl font-bold">1</span>
+                </div>
+                <h2 class="font-serif text-3xl md:text-4xl text-stone-900 mb-6">Our Ironclad Guarantee</h2>
+                <p class="text-stone-600 max-w-2xl text-lg font-light leading-relaxed">
+                    We stand behind our craftsmanship. Every Martin Construction project comes with a comprehensive <strong class="text-stone-900 font-medium">1-Year Warranty</strong> and a Money Back Satisfaction Guarantee. If it's not right, we make it right.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-stone-50">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <!-- Contact Info -->
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-bronze-600 mb-4 block">Get In Touch</span>
+                        <h2 class="font-serif text-4xl lg:text-5xl mb-6 text-stone-900">Ready to build?</h2>
+                        <p class="text-stone-600 mb-8 font-light text-lg">
+                            Don't wait. Your property's value depends on timely action. The 20% discount availability is filling up fast.
+                        </p>
+
+                        <div class="space-y-6 mt-12">
+                            <a href="tel:7205840716" class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 bg-white flex items-center justify-center shadow-sm group-hover:bg-bronze-600 transition-colors duration-300">
+                                    <i data-lucide="phone" class="w-5 h-5 text-stone-900 group-hover:text-white transition-colors"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs uppercase tracking-widest text-stone-400">Call Us Now</p>
+                                    <p class="font-serif text-xl text-stone-900 group-hover:text-bronze-600 transition-colors">720-584-0716</p>
+                                </div>
+                            </a>
+
+                            <a href="mailto:info@martinconstructors.org" class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 bg-white flex items-center justify-center shadow-sm group-hover:bg-bronze-600 transition-colors duration-300">
+                                    <i data-lucide="mail" class="w-5 h-5 text-stone-900 group-hover:text-white transition-colors"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs uppercase tracking-widest text-stone-400">Email Us</p>
+                                    <p class="font-serif text-xl text-stone-900 group-hover:text-bronze-600 transition-colors">info@martinconstructors.org</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="bg-white p-8 md:p-12 shadow-2xl shadow-stone-200/50 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-bronze-50 rounded-bl-full -mr-10 -mt-10"></div>
+
+                        <h3 class="font-serif text-2xl mb-8">Book Your Appointment</h3>
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase tracking-widest text-stone-500">Name</label>
+                                    <input type="text" class="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-bronze-600 transition-colors bg-transparent" placeholder="John Doe">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase tracking-widest text-stone-500">Phone</label>
+                                    <input type="tel" class="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-bronze-600 transition-colors bg-transparent" placeholder="(555) 555-5555">
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-stone-500">Service Needed</label>
+                                <select class="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-bronze-600 transition-colors bg-transparent text-stone-600">
+                                    <option>Insurance Restoration</option>
+                                    <option>General Remodeling</option>
+                                    <option>Structural Repairs</option>
+                                    <option>Commercial Construction</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-stone-500">Message</label>
+                                <textarea rows="3" class="w-full border-b border-stone-300 py-2 focus:outline-none focus:border-bronze-600 transition-colors bg-transparent resize-none" placeholder="Tell us about your project..."></textarea>
+                            </div>
+
+                            <button type="button" class="w-full bg-stone-900 text-white py-4 mt-4 uppercase tracking-widest text-xs font-bold hover:bg-bronze-600 transition-colors duration-300 flex items-center justify-center gap-2 group">
+                                Submit Request
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                            
+                            <p class="text-[10px] text-stone-400 text-center mt-4">
+                                By submitting, you agree to be contacted by Martin Construction regarding your project inquiry.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 text-white py-16 border-t border-stone-900">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
+                <div class="text-center md:text-left">
+                    <div class="flex flex-col items-center md:items-start leading-none mb-6">
+                        <span class="font-serif text-2xl font-bold tracking-tight">MARTIN</span>
+                        <span class="text-[10px] tracking-[0.25em] uppercase font-sans text-stone-400 mt-1">Construction</span>
+                    </div>
+                    <p class="text-stone-500 text-sm max-w-xs">
+                        A Class Licensed Contractors specializing in high-end restoration and remodeling.
+                    </p>
+                </div>
+
+                <div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-stone-400">
+                    <a href="#problem" class="hover:text-white transition-colors">Services</a>
+                    <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                </div>
+
+                <div class="text-center md:text-right">
+                    <p class="text-stone-500 text-xs mb-2">© 2024 Martin Construction.</p>
+                    <p class="text-stone-600 text-[10px]">Designed for Excellence.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic -->
+    <script src="script.js"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
