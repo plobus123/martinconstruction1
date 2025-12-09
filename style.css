@@ -24,16 +24,16 @@ html {
 
 /* Header Styles */
 #navbar {
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Navbar Scrolled State Override */
 #navbar.scrolled .nav-link {
-    color: #1c1917; /* stone-900 */
+    color: #0c0a09 !important; /* stone-950 - Force Dark */
 }
 
 #navbar.scrolled .nav-link:hover {
-    color: #8c6b46; /* bronze-600 */
+    color: #8c6b46 !important; /* bronze-600 */
 }
 
 /* DROPDOWN LOGIC (CLICK BASED) */
@@ -83,30 +83,37 @@ html {
 
 /* Header Solid Override for Subpages */
 body.header-solid-mode #navbar {
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
+    background-color: #ffffff !important; /* Force solid white */
     border-bottom: 1px solid #e7e5e4;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
 }
 
 body.header-solid-mode .nav-link {
-    color: #1c1917 !important;
+    color: #0c0a09 !important;
 }
 body.header-solid-mode .nav-link:hover {
     color: #8c6b46 !important;
 }
 
-body.header-solid-mode #logo-text { color: #1c1917 !important; }
+body.header-solid-mode #logo-text { color: #0c0a09 !important; }
 body.header-solid-mode #logo-subtext { color: #8c6b46 !important; }
-body.header-solid-mode #menu-icon { color: #1c1917 !important; }
+body.header-solid-mode #menu-icon { color: #0c0a09 !important; }
 body.header-solid-mode #nav-cta {
-    border-color: #1c1917 !important;
-    color: #1c1917 !important;
+    border-color: #0c0a09 !important;
+    color: #0c0a09 !important;
 }
 body.header-solid-mode #nav-cta:hover {
-    background-color: #1c1917 !important;
+    background-color: #0c0a09 !important;
     color: white !important;
+}
+
+/* Ensure absolute images stay back */
+img.absolute {
+    z-index: 0;
+}
+div.relative.z-10 {
+    z-index: 10;
 }
 
 /* Animations */

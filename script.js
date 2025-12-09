@@ -1,7 +1,19 @@
 // Initialize Lucide Icons
+function initIcons() {
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    lucide.createIcons();
+    initIcons();
+    // Double check just in case
+    setTimeout(initIcons, 300);
+    setTimeout(initIcons, 1000);
 });
+
+// Also try immediately in case DOM is already ready
+initIcons();
 
 // --- SPA ROUTER LOGIC ---
 function navigateTo(pageId) {
@@ -47,6 +59,12 @@ function navigateTo(pageId) {
     } else {
         body.classList.add('header-solid-mode');
     }
+
+    // 7. Re-init icons to ensure they appear on new page sections (CRITICAL FIX)
+    // We call it multiple times with slight delays to ensure DOM is ready
+    initIcons();
+    setTimeout(initIcons, 50);
+    setTimeout(initIcons, 200);
 }
 
 // --- NAVBAR SCROLL LOGIC ---
@@ -64,9 +82,10 @@ function handleScroll() {
     if (!navbar) return;
 
     if (window.scrollY > 20) {
-        // Scrolled State
+        // Scrolled State - Force Solid White Background
         navbar.classList.remove('bg-transparent', 'border-transparent', 'py-4', 'md:py-6');
-        navbar.classList.add('bg-white/95', 'backdrop-blur-md', 'border-stone-200', 'py-2', 'md:py-3', 'shadow-sm', 'border-b', 'scrolled');
+        // Use bg-white (solid) instead of bg-white/95
+        navbar.classList.add('bg-white', 'border-stone-200', 'py-2', 'md:py-3', 'shadow-md', 'border-b', 'scrolled');
         
         if (logoText) {
             logoText.classList.remove('lg:text-white');
@@ -80,7 +99,7 @@ function handleScroll() {
 
         navLinks.forEach(link => {
             link.classList.remove('text-stone-200', 'hover:text-white');
-            link.classList.add('text-stone-800', 'hover:text-stone-900');
+            link.classList.add('text-stone-950', 'hover:text-bronze-600');
         });
 
         if (navCta) {
@@ -94,7 +113,7 @@ function handleScroll() {
     } else {
         // Transparent State
         navbar.classList.add('bg-transparent', 'border-transparent', 'py-4', 'md:py-6');
-        navbar.classList.remove('bg-white/95', 'backdrop-blur-md', 'border-stone-200', 'py-2', 'md:py-3', 'shadow-sm', 'border-b', 'scrolled');
+        navbar.classList.remove('bg-white', 'border-stone-200', 'py-2', 'md:py-3', 'shadow-md', 'border-b', 'scrolled');
         
         if (logoText) {
             logoText.classList.add('lg:text-white');
@@ -108,7 +127,7 @@ function handleScroll() {
 
         navLinks.forEach(link => {
             link.classList.add('text-stone-200', 'hover:text-white');
-            link.classList.remove('text-stone-800', 'hover:text-stone-900');
+            link.classList.remove('text-stone-950', 'hover:text-bronze-600');
         });
 
         if (navCta) {
@@ -230,11 +249,12 @@ if (lightbox) {
 
 
 // --- FORM SUBMISSION ---
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+// Handle all forms with the class .contact-form
+const contactForms = document.querySelectorAll('.contact-form');
+contactForms.forEach(form => {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
         alert('Thank you for your inquiry. A Martin Construction representative will contact you shortly.');
-        contactForm.reset();
+        form.reset();
     });
-}
+});
