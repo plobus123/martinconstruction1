@@ -1,4 +1,4 @@
-// Initialize Lucide Icons
+// Initialize Lucide Icons if available (used as fallback for non-inlined icons)
 function initIcons() {
     if (window.lucide) {
         window.lucide.createIcons();
@@ -7,13 +7,9 @@ function initIcons() {
 
 document.addEventListener('DOMContentLoaded', () => {
     initIcons();
-    // Double check just in case
-    setTimeout(initIcons, 300);
-    setTimeout(initIcons, 1000);
+    // Safety check for icons loading
+    setTimeout(initIcons, 500);
 });
-
-// Also try immediately in case DOM is already ready
-initIcons();
 
 // --- SPA ROUTER LOGIC ---
 function navigateTo(pageId) {
@@ -29,132 +25,34 @@ function navigateTo(pageId) {
         targetPage.classList.add('active');
     }
 
-    // 3. Close Mobile Menu
+    // 3. Close Menus
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenu) {
         mobileMenu.classList.add('translate-x-full');
         mobileMenu.classList.remove('translate-x-0');
-        isMenuOpen = false;
     }
-
-    // 4. Close Desktop Dropdown
     const desktopServicesMenu = document.getElementById('desktop-services-menu');
-    const dropdownIcon = document.getElementById('dropdown-icon');
     if (desktopServicesMenu) {
-        // Toggle 'hidden' class back on to close it
         desktopServicesMenu.classList.add('hidden');
-        desktopServicesMenu.classList.remove('show');
-        if(dropdownIcon) dropdownIcon.style.transform = 'rotate(0deg)';
     }
+    const dropdownIcon = document.getElementById('dropdown-icon');
+    if(dropdownIcon) dropdownIcon.style.transform = 'rotate(0deg)';
 
-    // 5. Scroll to top
+    // 4. Scroll to absolute top
     window.scrollTo(0, 0);
 
-    // 6. Handle Header Style (Transparent on Home, Solid on others)
-    const body = document.body;
-    if (pageId === 'home-page') {
-        body.classList.remove('header-solid-mode');
-        // Trigger scroll handler to reset transparency if at top
-        handleScroll();
-    } else {
-        body.classList.add('header-solid-mode');
-    }
-
-    // 7. Re-init icons to ensure they appear on new page sections (CRITICAL FIX)
-    // We call it multiple times with slight delays to ensure DOM is ready
-    initIcons();
+    // 5. Re-init icons just in case
     setTimeout(initIcons, 50);
-    setTimeout(initIcons, 200);
 }
-
-// --- NAVBAR SCROLL LOGIC ---
-const navbar = document.getElementById('navbar');
-const logoText = document.getElementById('logo-text');
-const logoSubtext = document.getElementById('logo-subtext');
-const navLinks = document.querySelectorAll('.nav-link');
-const navCta = document.getElementById('nav-cta');
-const menuIcon = document.getElementById('menu-icon');
-
-function handleScroll() {
-    // If we are NOT on home page, let the 'header-solid-mode' class handle styles.
-    if (document.body.classList.contains('header-solid-mode')) return;
-
-    if (!navbar) return;
-
-    if (window.scrollY > 20) {
-        // Scrolled State - Force Solid White Background
-        navbar.classList.remove('bg-transparent', 'border-transparent', 'py-4', 'md:py-6');
-        // Use bg-white (solid) instead of bg-white/95
-        navbar.classList.add('bg-white', 'border-stone-200', 'py-2', 'md:py-3', 'shadow-md', 'border-b', 'scrolled');
-        
-        if (logoText) {
-            logoText.classList.remove('lg:text-white');
-            logoText.classList.add('text-stone-900');
-        }
-        
-        if (logoSubtext) {
-            logoSubtext.classList.remove('lg:text-stone-200');
-            logoSubtext.classList.add('text-bronze-600');
-        }
-
-        navLinks.forEach(link => {
-            link.classList.remove('text-stone-200', 'hover:text-white');
-            link.classList.add('text-stone-950', 'hover:text-bronze-600');
-        });
-
-        if (navCta) {
-            navCta.classList.remove('border-white', 'text-white', 'hover:bg-white', 'hover:text-stone-900');
-            navCta.classList.add('border-stone-900', 'text-stone-900', 'hover:bg-stone-900', 'hover:text-white');
-        }
-
-        if (menuIcon) {
-            menuIcon.classList.remove('lg:text-white');
-        }
-    } else {
-        // Transparent State
-        navbar.classList.add('bg-transparent', 'border-transparent', 'py-4', 'md:py-6');
-        navbar.classList.remove('bg-white', 'border-stone-200', 'py-2', 'md:py-3', 'shadow-md', 'border-b', 'scrolled');
-        
-        if (logoText) {
-            logoText.classList.add('lg:text-white');
-            logoText.classList.remove('text-stone-900');
-        }
-        
-        if (logoSubtext) {
-            logoSubtext.classList.add('lg:text-stone-200');
-            logoSubtext.classList.remove('text-bronze-600');
-        }
-
-        navLinks.forEach(link => {
-            link.classList.add('text-stone-200', 'hover:text-white');
-            link.classList.remove('text-stone-950', 'hover:text-bronze-600');
-        });
-
-        if (navCta) {
-            navCta.classList.add('border-white', 'text-white', 'hover:bg-white', 'hover:text-stone-900');
-            navCta.classList.remove('border-stone-900', 'text-stone-900', 'hover:bg-stone-900', 'hover:text-white');
-        }
-
-        if (menuIcon) {
-            menuIcon.classList.add('lg:text-white');
-        }
-    }
-}
-
-window.addEventListener('scroll', handleScroll);
-// Initial check
-handleScroll();
 
 // --- MOBILE MENU ---
 const mobileToggle = document.getElementById('mobile-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 const closeMobileMenu = document.getElementById('close-mobile-menu');
-let isMenuOpen = false;
 
 function toggleMenu() {
-    isMenuOpen = !isMenuOpen;
     if (mobileMenu) {
-        if (isMenuOpen) {
+        if (mobileMenu.classList.contains('translate-x-full')) {
             mobileMenu.classList.remove('translate-x-full');
             mobileMenu.classList.add('translate-x-0');
         } else {
@@ -167,7 +65,7 @@ function toggleMenu() {
 if (mobileToggle) mobileToggle.addEventListener('click', toggleMenu);
 if (closeMobileMenu) closeMobileMenu.addEventListener('click', toggleMenu);
 
-// Mobile Dropdown Toggle
+// Mobile Dropdown
 const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
 mobileDropdownToggles.forEach(toggle => {
     toggle.addEventListener('click', (e) => {
@@ -177,7 +75,7 @@ mobileDropdownToggles.forEach(toggle => {
 });
 
 
-// --- DESKTOP DROPDOWN (CLICK) ---
+// --- DESKTOP DROPDOWN ---
 const desktopServicesBtn = document.getElementById('desktop-services-btn');
 const desktopServicesMenu = document.getElementById('desktop-services-menu');
 const dropdownIcon = document.getElementById('dropdown-icon');
@@ -186,51 +84,47 @@ if (desktopServicesBtn && desktopServicesMenu) {
     desktopServicesBtn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        
-        // Check if it is currently hidden
-        const isHidden = desktopServicesMenu.classList.contains('hidden');
-        
-        if (isHidden) {
-            // SHOW IT
-            desktopServicesMenu.classList.remove('hidden');
-            desktopServicesMenu.classList.add('show'); // Logic for flex display if needed
-            if(dropdownIcon) dropdownIcon.style.transform = 'rotate(180deg)';
+        desktopServicesMenu.classList.toggle('hidden');
+        if(!desktopServicesMenu.classList.contains('hidden')) {
+             if(dropdownIcon) dropdownIcon.style.transform = 'rotate(180deg)';
         } else {
-            // HIDE IT
-            desktopServicesMenu.classList.add('hidden');
-            desktopServicesMenu.classList.remove('show');
-            if(dropdownIcon) dropdownIcon.style.transform = 'rotate(0deg)';
+             if(dropdownIcon) dropdownIcon.style.transform = 'rotate(0deg)';
         }
     });
 
-    // Close on click outside
     document.addEventListener('click', (e) => {
         if (!desktopServicesBtn.contains(e.target) && !desktopServicesMenu.contains(e.target)) {
              desktopServicesMenu.classList.add('hidden');
-             desktopServicesMenu.classList.remove('show');
              if(dropdownIcon) dropdownIcon.style.transform = 'rotate(0deg)';
         }
     });
 }
 
+// --- CAROUSEL LOGIC ---
+window.scrollCarousel = function(carouselId, direction) {
+    const track = document.getElementById(carouselId);
+    if (track) {
+        const scrollAmount = track.offsetWidth; 
+        if (direction === 1) {
+            track.scrollLeft += scrollAmount;
+        } else {
+            track.scrollLeft -= scrollAmount;
+        }
+    }
+}
 
 // --- LIGHTBOX ---
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeLightbox = document.getElementById('close-lightbox');
 
-// Delegate click event for gallery items since they might be in any section
-document.addEventListener('click', (e) => {
-    const item = e.target.closest('.gallery-item');
-    if (item) {
-        const src = item.getAttribute('data-src');
-        if (src && lightbox) {
-            lightboxImg.src = src;
-            lightbox.classList.remove('hidden');
-            document.body.classList.add('no-scroll');
-        }
+window.openLightbox = function(src) {
+    if (lightbox && lightboxImg) {
+        lightboxImg.src = src;
+        lightbox.classList.remove('hidden');
+        document.body.classList.add('no-scroll');
     }
-});
+}
 
 function hideLightbox() {
     if (lightbox) {
@@ -247,9 +141,7 @@ if (lightbox) {
     });
 }
 
-
 // --- FORM SUBMISSION ---
-// Handle all forms with the class .contact-form
 const contactForms = document.querySelectorAll('.contact-form');
 contactForms.forEach(form => {
     form.addEventListener('submit', (e) => {
@@ -258,3 +150,11 @@ contactForms.forEach(form => {
         form.reset();
     });
 });
+
+const heroForm = document.querySelector('.hero-form');
+if(heroForm) {
+    heroForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you! Redirecting to schedule your free consultation...');
+    });
+}

@@ -22,39 +22,36 @@ html {
     overflow: hidden;
 }
 
+/* Prevent horizontal overflow on mobile */
+body, html {
+    overflow-x: hidden;
+    width: 100%;
+    /* Increase base font size slightly for readability */
+    font-size: 16px;
+}
+
 /* Header Styles */
 #navbar {
     transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Navbar Scrolled State Override */
-#navbar.scrolled .nav-link {
-    color: #0c0a09 !important; /* stone-950 - Force Dark */
-}
-
-#navbar.scrolled .nav-link:hover {
-    color: #8c6b46 !important; /* bronze-600 */
-}
-
-/* DROPDOWN LOGIC (CLICK BASED) */
+/* DROPDOWN LOGIC */
 .dropdown-content {
-    /* Base styles, visibility handled by Tailwind 'hidden' class */
     z-index: 1000;
 }
 
-/* Individual Boxed Items */
 .dropdown-item {
-    padding: 14px 20px;
+    padding: 16px 24px;
     text-decoration: none;
     display: block;
-    color: #44403c; /* stone-700 */
-    font-size: 0.8rem;
+    color: #44403c;
+    font-size: 0.85rem;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.05em;
     transition: all 0.2s;
     background-color: white;
-    border-left: 3px solid transparent;
+    border-left: 4px solid transparent;
     border-bottom: 1px solid #f5f5f4;
 }
 
@@ -66,7 +63,7 @@ html {
     background-color: #fafaf9;
     color: #8c6b46;
     border-left-color: #8c6b46;
-    padding-left: 24px; /* Slide effect */
+    padding-left: 28px;
 }
 
 /* SPA VIEW LOGIC */
@@ -81,31 +78,14 @@ html {
     opacity: 1;
 }
 
-/* Header Solid Override for Subpages */
-body.header-solid-mode #navbar {
-    background-color: #ffffff !important; /* Force solid white */
-    border-bottom: 1px solid #e7e5e4;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+/* Ensuring top padding for fixed header */
+main {
+    padding-top: 6rem; 
 }
-
-body.header-solid-mode .nav-link {
-    color: #0c0a09 !important;
-}
-body.header-solid-mode .nav-link:hover {
-    color: #8c6b46 !important;
-}
-
-body.header-solid-mode #logo-text { color: #0c0a09 !important; }
-body.header-solid-mode #logo-subtext { color: #8c6b46 !important; }
-body.header-solid-mode #menu-icon { color: #0c0a09 !important; }
-body.header-solid-mode #nav-cta {
-    border-color: #0c0a09 !important;
-    color: #0c0a09 !important;
-}
-body.header-solid-mode #nav-cta:hover {
-    background-color: #0c0a09 !important;
-    color: white !important;
+@media (min-width: 1024px) {
+    main {
+        padding-top: 7rem;
+    }
 }
 
 /* Ensure absolute images stay back */
@@ -114,6 +94,11 @@ img.absolute {
 }
 div.relative.z-10 {
     z-index: 10;
+}
+
+/* Services Grid */
+.services-grid {
+    grid-auto-flow: row dense;
 }
 
 /* Animations */
@@ -130,5 +115,35 @@ div.relative.z-10 {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Carousel Styles */
+.carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+    width: 100%;
+}
+.carousel-track::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+/* Text Readability Overlays */
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Hero Box specific overrides for mobile/desktop stacking */
+.hero-box-container {
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 1024px) {
+    .hero-box-container {
+        flex-direction: row;
+        align-items: stretch;
     }
 }
