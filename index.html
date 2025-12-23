@@ -6,13 +6,12 @@
     <title>Martin Construction | General Contractor Denver & Englewood, CO</title>
     <meta name="description" content="Premier Class B Licensed General Contractors in Denver & Englewood, CO. Specializing in luxury remodeling, insurance restoration, structural repairs, and commercial construction." />
     
-    <script src="https://web3forms.com/client/script.js" async defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <script src="https://unpkg.com/lucide@latest"></script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css">
-
     <script>
       tailwind.config = {
         theme: {
@@ -25,448 +24,209 @@
       }
     </script>
 </head>
-<body class="bg-stone-50 text-stone-900 antialiased selection:bg-bronze-500 selection:text-white">
+<body class="bg-stone-50 text-stone-900 antialiased selection:bg-bronze-500 selection:text-white flex flex-col min-h-screen">
 
-    <header>
-        <div class="navbar">
-            <a href="index.html" class="logo">MARTIN CONSTRUCTORS</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 flex flex-col transition-all duration-300 shadow-md bg-white text-stone-900">
+        <div class="w-full transition-all duration-300 py-4 lg:py-5">
+            <div class="container mx-auto px-4 lg:px-12 flex items-center justify-between">
                 
-                <li class="dropdown">
-                    <a href="services.html" class="dropbtn">Services &#9662;</a>
-                    <div class="dropdown-content">
-                        <div class="inner-menu">
-                            <a href="services.html#gc">General Contracting</a>
-                            <a href="services.html#remodel">Remodeling</a>
-                            <a href="services.html#restore">Restoration</a>
-                            <a href="services.html#pm">Project Management</a>
+                <a href="index.html" class="group relative z-50 flex-shrink-0">
+                    <div class="flex flex-col items-start leading-none">
+                        <span class="font-serif text-3xl lg:text-4xl font-bold tracking-tight text-stone-900">MARTIN</span>
+                        <span class="text-[10px] lg:text-xs tracking-[0.3em] uppercase font-sans font-medium mt-1 text-bronze-600">Construction</span>
+                    </div>
+                </a>
+
+                <nav class="hidden xl:flex items-center gap-8 h-full">
+                    <a href="index.html" class="text-sm uppercase tracking-widest font-bold relative group py-2 text-stone-950 hover:text-bronze-600 transition-colors">Home</a>
+                    <a href="about.html" class="text-sm uppercase tracking-widest font-bold relative group py-2 text-stone-950 hover:text-bronze-600 transition-colors">About Us</a>
+                    
+                    <div class="relative h-full flex items-center group/dropdown">
+                        <button class="text-sm uppercase tracking-widest font-bold relative py-2 text-stone-950 hover:text-bronze-600 flex items-center gap-1 bg-transparent border-none cursor-pointer transition-colors">
+                            Services <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="hidden group-hover/dropdown:flex absolute top-full left-1/2 -translate-x-1/2 bg-white min-w-[280px] shadow-2xl border-t-4 border-bronze-600 flex-col mt-0 pt-2 rounded-b-sm">
+                            <a href="service-new-construction.html" class="block px-6 py-3 hover:bg-stone-50 text-stone-800 text-sm font-medium transition-colors">New Construction</a>
+                            <a href="service-basement.html" class="block px-6 py-3 hover:bg-stone-50 text-stone-800 text-sm font-medium transition-colors">Basement Remodeling</a>
+                            <a href="service-insurance.html" class="block px-6 py-3 hover:bg-stone-50 text-stone-800 text-sm font-medium transition-colors">Insurance Restoration</a>
+                            <a href="service-kitchen.html" class="block px-6 py-3 hover:bg-stone-50 text-stone-800 text-sm font-medium transition-colors">Kitchen Remodeling</a>
+                            <a href="service-bath.html" class="block px-6 py-3 hover:bg-stone-50 text-stone-800 text-sm font-medium transition-colors">Bathroom Remodeling</a>
+                            <a href="service-structural.html" class="block px-6 py-3 hover:bg-stone-50 text-stone-800 text-sm font-medium transition-colors">Structural Repairs</a>
+                            <a href="service-commercial.html" class="block px-6 py-3 hover:bg-stone-50 text-stone-800 text-sm font-medium transition-colors">Commercial Contracting</a>
                         </div>
                     </div>
-                </li>
+
+                    <a href="portfolio.html" class="text-sm uppercase tracking-widest font-bold relative group py-2 text-stone-950 hover:text-bronze-600 transition-colors">Portfolio</a>
+                    <a href="blog.html" class="text-sm uppercase tracking-widest font-bold relative group py-2 text-stone-950 hover:text-bronze-600 transition-colors">Blog</a>
+                </nav>
+
+                <div class="hidden xl:flex items-center gap-6">
+                    <a href="tel:7205840716" class="font-serif text-xl font-bold text-stone-900 hover:text-bronze-600 transition-colors">720-584-0716</a>
+                    <a href="contact.html" class="px-6 py-3 bg-bronze-600 text-white text-sm uppercase tracking-widest font-bold hover:bg-stone-900 transition-colors rounded-sm shadow-md flex items-center gap-2">
+                        Book Now
+                    </a>
+                </div>
+
+                <div class="xl:hidden flex items-center gap-4">
+                    <a href="tel:7205840716" class="p-2 bg-bronze-600 text-white rounded-full shadow-md"><i data-lucide="phone" class="w-5 h-5"></i></a>
+                    <button id="mobile-toggle" class="p-2 text-stone-900 hover:text-bronze-600 transition-colors">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-[60] hidden flex-col items-center justify-center overflow-y-auto">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 p-2 text-stone-900 hover:text-bronze-600">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <nav class="flex flex-col items-center gap-6 text-center w-full px-6 py-10">
+                <a href="index.html" class="font-serif text-3xl text-stone-900 hover:text-bronze-600">Home</a>
+                <a href="about.html" class="font-serif text-3xl text-stone-900 hover:text-bronze-600">About Us</a>
                 
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+                <div class="w-full max-w-xs flex flex-col gap-3 bg-stone-50 p-6 rounded-lg border border-stone-100">
+                    <span class="text-sm font-bold uppercase text-bronze-600 mb-2 tracking-widest">Services</span>
+                    <a href="service-new-construction.html" class="text-stone-600 hover:text-stone-900 font-medium">New Construction</a>
+                    <a href="service-basement.html" class="text-stone-600 hover:text-stone-900 font-medium">Basement</a>
+                    <a href="service-insurance.html" class="text-stone-600 hover:text-stone-900 font-medium">Insurance Restoration</a>
+                    <a href="service-kitchen.html" class="text-stone-600 hover:text-stone-900 font-medium">Kitchen</a>
+                    <a href="service-bath.html" class="text-stone-600 hover:text-stone-900 font-medium">Bathroom</a>
+                    <a href="service-structural.html" class="text-stone-600 hover:text-stone-900 font-medium">Structural</a>
+                    <a href="service-commercial.html" class="text-stone-600 hover:text-stone-900 font-medium">Commercial</a>
+                </div>
+                
+                <a href="portfolio.html" class="font-serif text-3xl text-stone-900 hover:text-bronze-600">Portfolio</a>
+                <a href="contact.html" class="mt-4 px-10 py-4 bg-stone-900 text-white uppercase tracking-widest font-bold hover:bg-bronze-600 transition-colors w-full max-w-xs">
+                    Book Appointment
+                </a>
+            </nav>
         </div>
     </header>
-    <main> 
-        <section class="relative w-full h-auto min-h-[85vh] flex items-center justify-center overflow-hidden mt-0 py-20 lg:py-16">
+    <main class="flex-grow pt-28 lg:pt-32">
+        
+        <section class="relative w-full h-[85vh] flex items-center justify-center overflow-hidden">
             <div class="absolute inset-0 z-0">
-                <img src="images/living-room.jpg" alt="Denver Skyline" class="w-full h-full object-cover opacity-100 animate-[fadeIn_2s_ease-out]">
-                <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+                <img src="images/living-room.jpg" alt="Luxury Interior" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-black/40"></div>
             </div>
 
-            <div class="relative z-10 container mx-auto px-6 lg:px-12 w-full">
-                <div class="flex flex-col gap-12 text-left text-white max-w-6xl mx-auto">
-                    <div>
-                        <h2 class="text-sm md:text-base font-sans uppercase tracking-[0.3em] mb-4 text-stone-300 animate-fade-in-up">Refined General Contracting</h2>
-                        <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-4 leading-tight animate-fade-in-up" style="animation-delay: 0.2s">Property Specialist, <br /><span class="italic text-bronze-500">in Denver Colorado</span></h1>
-                    </div>
-
-                    <div class="flex flex-col lg:flex-row gap-8 items-stretch w-full animate-fade-in-up" style="animation-delay: 0.4s">
-                        <div class="bg-white/95 backdrop-blur-sm text-stone-900 p-6 rounded-sm shadow-xl flex-none lg:w-auto max-w-md border-l-4 border-bronze-600 flex flex-col justify-center">
-                            <div>
-                                <h3 class="font-bold text-3xl mb-3 tracking-tight">Martin Construction</h3>
-                                <a href="https://share.google/0FvcKOd7VBUmzOLtQ" target="_blank" class="flex items-center gap-2 mb-4 hover:opacity-80 transition-opacity">
-                                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M23.5 12.2C23.5 11.4 23.4 10.6 23.3 9.8H12V14.4H18.4C18.2 15.9 17.2 17.2 15.9 18V21H19.8C22.1 18.9 23.5 15.8 23.5 12.2Z" fill="#4285F4"/>
-                                        <path d="M12 24C15.2 24 17.9 22.9 19.8 21L15.9 18C14.8 18.7 13.5 19.1 12 19.1C8.9 19.1 6.3 17 5.4 14.1H1.4V17.2C3.4 21.2 7.5 24 12 24Z" fill="#34A853"/>
-                                        <path d="M5.4 14.1C5.2 13.4 5.1 12.7 5.1 12C5.1 11.3 5.2 10.6 5.4 9.9V6.8H1.4C0.5 8.4 0 10.2 0 12C0 13.8 0.5 15.6 1.4 17.2L5.4 14.1Z" fill="#FBBC05"/>
-                                        <path d="M12 4.9C13.7 4.9 15.3 5.5 16.5 6.7L20 3.2C17.9 1.2 15.2 0 12 0C7.5 0 3.4 2.8 1.4 6.8L5.4 9.9C6.3 7 8.9 4.9 12 4.9Z" fill="#EA4335"/>
-                                    </svg>
-                                    <span class="font-bold text-lg">5.0</span>
-                                    <div class="flex gap-0.5 text-yellow-500">
-                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                    </div>
-                                    <span class="text-stone-500 text-xs font-bold underline">(11 Reviews)</span>
-                                </a>
-                            </div>
-                            <div class="flex flex-col gap-3">
-                                <a href="tel:7205840716" class="flex items-center gap-2 text-2xl font-serif font-bold text-stone-900 hover:text-bronze-600 transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                                    720-584-0716
-                                </a>
-                                <a href="tel:7205840716" class="w-full px-4 py-2 bg-bronze-600 text-white uppercase font-bold tracking-widest hover:bg-stone-900 transition-colors text-center text-xs shadow-lg rounded-sm">
-                                    Call Now
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="flex-1 bg-stone-900 text-white p-8 shadow-2xl">
-                            <h3 class="font-serif text-3xl mb-3 text-white">Schedule your <br/><span class="text-bronze-500">FREE Design Consultation</span></h3>
-                            <p class="text-stone-400 text-sm mb-6">Enter your email to get started with your complimentary design consultation.</p>
-                            
-                            <form action="https://api.web3forms.com/submit" method="POST" class="hero-form space-y-4">
-                                <input type="hidden" name="access_key" value="3e696060-6ade-46dd-93a1-590db5823748">
-                                <input type="hidden" name="subject" value="New Mailing List Subscriber">
-                                <input type="hidden" name="redirect" value="https://martinconstructors.org/contact.html">
-                                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                                <div>
-                                    <input type="email" name="email" placeholder="Email Address" required class="w-full bg-white text-stone-900 p-4 text-base focus:outline-none border-2 border-transparent focus:border-bronze-500 placeholder-stone-400">
-                                </div>
-                                
-                                <div class="h-captcha" data-captcha="true"></div>
-
-                                <button type="submit" class="w-full bg-bronze-600 text-white py-4 px-6 uppercase tracking-widest text-sm font-bold hover:bg-white hover:text-stone-900 transition-colors cursor-pointer border border-bronze-600">Claim 10% Offer*</button>
-                                <p class="text-xs text-stone-500 mt-3 text-center leading-snug">For a limited time, new clients can receive a 10% discount on any project over $10,000, please inquire for more details. Terms & Conditions apply</p>
-                            </form>
-                        </div>
-                    </div>
+            <div class="relative z-10 container mx-auto px-6 lg:px-12 text-center text-white">
+                <h2 class="text-sm md:text-base font-sans uppercase tracking-[0.3em] mb-4 text-stone-300">Refined General Contracting</h2>
+                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 leading-tight">
+                    Building Excellence <br />
+                    <span class="italic text-bronze-500">in Denver, CO</span>
+                </h1>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                    <a href="contact.html" class="px-8 py-4 bg-bronze-600 text-white uppercase tracking-widest font-bold hover:bg-white hover:text-stone-900 transition-colors shadow-lg">
+                        Get an Estimate
+                    </a>
+                    <a href="portfolio.html" class="px-8 py-4 border-2 border-white text-white uppercase tracking-widest font-bold hover:bg-white hover:text-stone-900 transition-colors">
+                        View Portfolio
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section id="problem" class="py-24 bg-stone-50 text-stone-900 scroll-mt-20">
-            <div class="container mx-auto px-6 lg:px-12">
-                <div class="flex flex-col lg:flex-row justify-between items-end mb-16 gap-10">
-                    <div class="lg:w-1/2">
-                        <span class="block text-sm font-bold uppercase tracking-widest text-bronze-600 mb-4">Our Services</span>
-                        <h2 class="font-serif text-4xl lg:text-6xl leading-tight">Expert Craftsmanship <br /><span class="italic text-stone-500">For Every</span> Project</h2>
-                    </div>
-                    <div class="lg:w-1/3 text-stone-600 leading-relaxed font-light text-lg">
-                        <p>From complex insurance claims to ground-up luxury construction, we deliver precision and peace of mind.</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32 services-grid">
-                    <a href="service-new.html" class="group relative h-[28rem] overflow-hidden cursor-pointer rounded-sm shadow-md md:col-span-2 lg:col-span-2 block">
-                        <img src="https://images.unsplash.com/photo-1600596542815-3ad19fb2a258?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-10 text-white">
-                            <h3 class="font-serif text-4xl mb-3 leading-tight">General Remodeling &<br/>New&nbsp;Construction</h3>
-                            <p class="text-lg font-sans text-stone-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">Additions, garages, and ground-up builds.</p>
-                        </div>
-                    </a>
-
-                    <a href="service-basement.html" class="group relative h-[28rem] overflow-hidden cursor-pointer rounded-sm shadow-md block">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-10 text-white">
-                            <h3 class="font-serif text-3xl mb-3">Basement Remodeling</h3>
-                            <p class="text-base font-sans text-stone-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">Home theaters, gyms, & extra living space.</p>
-                        </div>
-                    </a>
-
-                    <a href="service-insurance.html" class="group relative h-[28rem] overflow-hidden cursor-pointer rounded-sm shadow-md block">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-10 text-white">
-                            <h3 class="font-serif text-3xl mb-3">Insurance Restoration</h3>
-                            <p class="text-base font-sans text-stone-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">Direct billing & claim advocacy.</p>
-                        </div>
-                    </a>
-
-                    <a href="service-kitchen.html" class="group relative h-[28rem] overflow-hidden cursor-pointer rounded-sm shadow-md block">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-10 text-white">
-                            <h3 class="font-serif text-3xl mb-3">Kitchen Remodeling</h3>
-                            <p class="text-base font-sans text-stone-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">Luxury cabinetry & modern design.</p>
-                        </div>
-                    </a>
-
-                    <a href="service-bath.html" class="group relative h-[28rem] overflow-hidden cursor-pointer rounded-sm shadow-md block">
-                        <img src="https://images.unsplash.com/photo-1620626012053-1c167f7eb028?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-10 text-white">
-                            <h3 class="font-serif text-3xl mb-3">Bathroom Remodeling</h3>
-                            <p class="text-base font-sans text-stone-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">Spa retreats & custom showers.</p>
-                        </div>
-                    </a>
-
-                    <a href="service-structural.html" class="group relative h-[28rem] overflow-hidden cursor-pointer rounded-sm shadow-md block">
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-10 text-white">
-                            <h3 class="font-serif text-3xl mb-3">Structural Repairs</h3>
-                            <p class="text-base font-sans text-stone-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">Engineering, foundation, and framing.</p>
-                        </div>
-                    </a>
-
-                    <a href="service-commercial.html" class="group relative h-[28rem] overflow-hidden cursor-pointer rounded-sm shadow-md md:col-span-2 lg:col-span-2 block">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-10 text-white">
-                            <h3 class="font-serif text-3xl mb-3">Commercial</h3>
-                            <p class="text-base font-sans text-stone-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">Tenant improvements & build-outs.</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="bg-stone-900 text-white rounded-sm overflow-hidden mb-16">
-                    <div class="flex flex-col md:flex-row border-b border-stone-800">
-                            <div class="md:w-1/2 relative min-h-[400px]">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" alt="High End Kitchen" class="absolute inset-0 w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black/30"></div>
-                        </div>
-                        <div class="md:w-1/2 p-12 lg:p-20 flex flex-col justify-center">
-                            <span class="block text-sm font-bold uppercase tracking-widest text-bronze-500 mb-6">The Solution</span>
-                            <h2 class="font-serif text-4xl md:text-6xl mb-8">The Martin Standard</h2>
-                            <p class="text-stone-300 text-xl leading-relaxed mb-10">We specialize in time sensitive residential remodeling, renovations, & insurance repairs. Our approach guarantees transparency and results.</p>
-                            <ul class="space-y-6">
-                                <li class="flex items-center gap-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-bronze-500"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                                    <span class="text-base uppercase tracking-wide font-medium text-white">Comprehensive Project Management</span>
-                                </li>
-                                <li class="flex items-center gap-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-bronze-500"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                                    <span class="text-base uppercase tracking-wide font-medium text-white">Seamless Insurance Coordination</span>
-                                </li>
-                                <li class="flex items-center gap-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-bronze-500"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                                    <span class="text-base uppercase tracking-wide font-medium text-white">Uncompromising Quality Control</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="p-12 lg:p-20 bg-stone-950">
-                        <div class="text-center mb-16">
-                            <span class="text-sm font-bold uppercase tracking-widest text-stone-500">Our Process</span>
-                            <h3 class="font-serif text-4xl mt-2 text-white">How We Build</h3>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                            <div class="text-center group">
-                                <div class="w-20 h-20 rounded-full bg-stone-900 border border-stone-700 flex items-center justify-center mx-auto mb-8 group-hover:border-bronze-500 transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white group-hover:text-bronze-500 transition-colors"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
-                                </div>
-                                <h4 class="font-bold text-xl mb-3">1. Estimate & Planning</h4>
-                                <p class="text-stone-400 text-base">Detailed cost analysis and project scheduling.</p>
-                            </div>
-                            <div class="text-center group">
-                                    <div class="w-20 h-20 rounded-full bg-stone-900 border border-stone-700 flex items-center justify-center mx-auto mb-8 group-hover:border-bronze-500 transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white group-hover:text-bronze-500 transition-colors"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-                                </div>
-                                <h4 class="font-bold text-xl mb-3">2. Design & Selections</h4>
-                                <p class="text-stone-400 text-base">Material sourcing and design finalization.</p>
-                            </div>
-                            <div class="text-center group">
-                                    <div class="w-20 h-20 rounded-full bg-stone-900 border border-stone-700 flex items-center justify-center mx-auto mb-8 group-hover:border-bronze-500 transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white group-hover:text-bronze-500 transition-colors"><path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/><path d="M17.64 15 22 10.64"/><path d="m20.91 11.7-1.25-1.25c-.6-.6-.93-1.4-.93-2.25V2.75A2.75 2.75 0 0 0 16 0h-2.25c-.85 0-1.65.33-2.25.93L10.25 2.2"/></svg>
-                                </div>
-                                <h4 class="font-bold text-xl mb-3">3. Production & Quality Control</h4>
-                                <p class="text-stone-400 text-base">Expert craftsmanship and rigorous inspections.</p>
-                            </div>
-                            <div class="text-center group">
-                                    <div class="w-20 h-20 rounded-full bg-stone-900 border border-stone-700 flex items-center justify-center mx-auto mb-8 group-hover:border-bronze-500 transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white group-hover:text-bronze-500 transition-colors"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-                                </div>
-                                <h4 class="font-bold text-xl mb-3">4. Punch List & Warranty</h4>
-                                <p class="text-stone-400 text-base">Final walkthrough and long-term support.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-20 text-center">
-                    <div class="text-center mb-16">
-                         <span class="text-sm font-bold uppercase tracking-widest text-bronze-600">Testimonials</span>
-                         <h2 class="font-serif text-4xl md:text-5xl mt-4">What Our Clients Say</h2>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                        <a href="https://share.google/0FvcKOd7VBUmzOLtQ" target="_blank" class="block bg-white p-10 border border-stone-200 shadow-sm relative hover:shadow-lg transition-shadow">
-                            <div class="text-yellow-500 mb-6 flex gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            </div>
-                            <p class="text-stone-600 mb-8 italic text-lg leading-relaxed">"Martin Construction transformed our dated kitchen into a masterpiece. The attention to detail and communication throughout the process was incredible."</p>
-                            <div>
-                                <p class="font-serif font-bold text-stone-900 text-xl">Sarah Jenkins</p>
-                                <p class="text-sm text-stone-400 uppercase tracking-widest">Englewood, CO</p>
-                            </div>
-                        </a>
-                        <a href="https://share.google/0FvcKOd7VBUmzOLtQ" target="_blank" class="block bg-white p-10 border border-stone-200 shadow-sm relative hover:shadow-lg transition-shadow">
-                            <div class="text-yellow-500 mb-6 flex gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            </div>
-                            <p class="text-stone-600 mb-8 italic text-lg leading-relaxed">"Dealing with insurance was a nightmare until Martin Construction took over. They handled everything and got us a better payout for our restoration."</p>
-                            <div>
-                                <p class="font-serif font-bold text-stone-900 text-xl">Michael Ross</p>
-                                <p class="text-sm text-stone-400 uppercase tracking-widest">Denver, CO</p>
-                            </div>
-                        </a>
-                        <a href="https://share.google/0FvcKOd7VBUmzOLtQ" target="_blank" class="block bg-white p-10 border border-stone-200 shadow-sm relative hover:shadow-lg transition-shadow">
-                            <div class="text-yellow-500 mb-6 flex gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            </div>
-                            <p class="text-stone-600 mb-8 italic text-lg leading-relaxed">"We hired them for a commercial build-out. Professional, on time, and within budget. Their in-house team made all the difference."</p>
-                            <div>
-                                <p class="font-serif font-bold text-stone-900 text-xl">David Chen</p>
-                                <p class="text-sm text-stone-400 uppercase tracking-widest">TechStart Solutions</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-6 lg:px-12 text-center max-w-4xl">
+                <h2 class="font-serif text-4xl lg:text-5xl mb-6 text-stone-900">Welcome to Martin Construction</h2>
+                <p class="text-lg lg:text-xl text-stone-600 leading-relaxed font-light">
+                    We are a premier Class B licensed general contracting firm serving Denver and Englewood. 
+                    Whether you need a luxury kitchen remodel, insurance restoration after a storm, 
+                    or a ground-up commercial build, we deliver precision, transparency, and results.
+                </p>
             </div>
         </section>
 
-        <section id="credentials" class="py-24 bg-white scroll-mt-20">
-            <div class="container mx-auto px-6 lg:px-12">
-                <div class="text-center mb-16">
-                    <span class="text-sm font-bold uppercase tracking-widest text-stone-400">Our Qualifications</span>
-                    <h2 class="font-serif text-5xl mt-4 text-stone-900">Verified Experience</h2>
-                    <p class="text-stone-500 mt-6 max-w-2xl mx-auto text-xl">Locally owned and operated, with 30+ years general contracting experience in Denver, CO and the surrounding areas.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                    <div class="flex flex-col items-center">
-                        <div class="w-20 h-20 rounded-full bg-stone-50 flex items-center justify-center mb-8 border border-stone-200 text-stone-800">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-                        </div>
-                        <h3 class="font-serif text-3xl mb-4">Class B Licensed</h3>
-                        <p class="text-stone-500 text-base max-w-xs mx-auto">Fully licensed for major commercial and residential structural projects. We operate at the highest level of regulation.</p>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-20 h-20 rounded-full bg-stone-50 flex items-center justify-center mb-8 border border-stone-200 text-stone-800">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-                        </div>
-                        <h3 class="font-serif text-3xl mb-4">Restoration Experts</h3>
-                        <p class="text-stone-500 text-base max-w-xs mx-auto">We don't just repair, we restore your property & increase it's value by using quality materials & upstanding practices.</p>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-20 h-20 rounded-full bg-stone-50 flex items-center justify-center mb-8 border border-stone-200 text-stone-800">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                        </div>
-                        <h3 class="font-serif text-3xl mb-4">Fully Insured</h3>
-                        <p class="text-stone-500 text-base max-w-xs mx-auto">Comprehensive liability coverage for your peace of mind. Your property and our team are protected at every step.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="py-24 bg-stone-100">
-            <div class="container mx-auto px-6 lg:px-12">
-                    <div class="text-center mb-16">
-                    <span class="text-sm font-bold uppercase tracking-widest text-bronze-600">Get Started</span>
-                    <h2 class="font-serif text-5xl mt-4 text-stone-900">Contact Us Today</h2>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto items-start">
-                    <div class="space-y-10">
-                            <div>
-                                <h3 class="font-serif text-3xl mb-4">Martin Construction</h3>
-                                <p class="text-stone-600 text-lg">The one stop general contracting firm & property professionals in Denver & the surrounding areas.</p>
-                            </div>
-                            <div class="space-y-8">
-                            <a href="tel:7205840716" class="flex items-center gap-6 group">
-                                <div class="w-16 h-16 bg-white flex items-center justify-center shadow-sm group-hover:bg-bronze-600 transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-stone-900 group-hover:text-white"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                                </div>
-                                <div>
-                                    <p class="text-sm uppercase tracking-widest text-stone-400">Call Us</p>
-                                    <p class="font-serif text-2xl text-stone-900">720-584-0716</p>
-                                </div>
-                            </a>
-                            <a href="mailto:martinconstructionservice5280@gmail.com" class="flex items-center gap-6 group">
-                                    <div class="w-16 h-16 bg-white flex items-center justify-center shadow-sm group-hover:bg-bronze-600 transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-stone-900 group-hover:text-white"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                                </div>
-                                <div>
-                                    <p class="text-sm uppercase tracking-widest text-stone-400">Email Us</p>
-                                    <p class="font-serif text-2xl text-stone-900 text-sm break-all">martinconstructionservice5280@gmail.com</p>
-                                </div>
-                            </a>
-                            </div>
-                    </div>
-                    <div class="bg-white p-10 shadow-xl border border-stone-200">
-                        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6 contact-form">
-                            <input type="hidden" name="access_key" value="3e696060-6ade-46dd-93a1-590db5823748">
-                            <input type="hidden" name="subject" value="New Contact Form Inquiry">
-                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="space-y-2">
-                                    <label class="text-sm font-bold uppercase tracking-widest text-stone-500">Name</label>
-                                    <input type="text" name="name" required class="w-full border-2 border-stone-900 bg-white text-stone-900 p-4 text-base focus:outline-none focus:border-bronze-600">
-                                </div>
-                                <div class="space-y-2">
-                                    <label class="text-sm font-bold uppercase tracking-widest text-stone-500">Phone</label>
-                                    <input type="tel" name="phone" required class="w-full border-2 border-stone-900 bg-white text-stone-900 p-4 text-base focus:outline-none focus:border-bronze-600">
-                                </div>
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-sm font-bold uppercase tracking-widest text-stone-500">Service</label>
-                                <select name="service" class="w-full border-2 border-stone-900 bg-white text-stone-900 p-4 text-base focus:outline-none focus:border-bronze-600">
-                                    <option>Insurance Restoration</option>
-                                    <option>Kitchen Remodel</option>
-                                    <option>Bath Remodel</option>
-                                    <option>New Construction</option>
-                                    <option>Structural Repairs</option>
-                                    <option>Basement Remodeling</option>
-                                    <option>Commercial</option>
-                                    <option>Other</option>
-                                </select>
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-sm font-bold uppercase tracking-widest text-stone-500">Message</label>
-                                <textarea name="message" rows="4" class="w-full border-2 border-stone-900 bg-white text-stone-900 p-4 text-base focus:outline-none focus:border-bronze-600"></textarea>
-                            </div>
-                            
-                            <div class="h-captcha" data-captcha="true"></div>
-
-                            <button type="submit" class="w-full bg-stone-900 text-white py-5 uppercase tracking-widest text-sm font-bold hover:bg-bronze-600 transition-colors cursor-pointer">Submit Inquiry</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
+    <footer class="bg-stone-950 text-white pt-20 pb-10 border-t border-stone-800">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <div class="lg:col-span-1">
+                    <div class="flex flex-col items-start leading-none mb-6">
+                        <span class="font-serif text-3xl font-bold tracking-tight text-white">MARTIN</span>
+                        <span class="text-[10px] tracking-[0.3em] uppercase font-sans font-medium mt-1 text-bronze-500">Construction</span>
+                    </div>
+                    <p class="text-stone-400 text-sm leading-relaxed mb-6">
+                        Locally owned and operated Class B General Contractors. Dedicated to quality craftsmanship and integrity in every project.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="p-2 bg-stone-900 hover:bg-bronze-600 transition-colors rounded-full"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="#" class="p-2 bg-stone-900 hover:bg-bronze-600 transition-colors rounded-full"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#" class="p-2 bg-stone-900 hover:bg-bronze-600 transition-colors rounded-full"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
 
-    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 lg:p-12 hidden">
-        <button id="close-lightbox" class="absolute top-6 right-6 text-stone-400 hover:text-white transition-colors p-2 z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
-        <img id="lightbox-img" src="" alt="Detail" class="max-w-full max-h-full object-contain shadow-2xl">
-    </div>
+                <div>
+                    <h3 class="font-serif text-xl mb-6 text-white">Quick Links</h3>
+                    <ul class="space-y-3 text-stone-400 text-sm uppercase tracking-wider font-medium">
+                        <li><a href="index.html" class="hover:text-bronze-500 transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-bronze-500 transition-colors">About Us</a></li>
+                        <li><a href="portfolio.html" class="hover:text-bronze-500 transition-colors">Portfolio</a></li>
+                        <li><a href="blog.html" class="hover:text-bronze-500 transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-bronze-500 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
 
-    <footer class="site-footer">
-        <div class="footer-container">
-            
-            <div class="footer-col">
-                <h3>Martin Constructors</h3>
-                <p>Building excellence in the Denver area. We specialize in general contracting, restoration, and remodeling.</p>
+                <div>
+                    <h3 class="font-serif text-xl mb-6 text-white">Our Services</h3>
+                    <ul class="space-y-3 text-stone-400 text-sm font-medium">
+                        <li><a href="service-insurance.html" class="hover:text-bronze-500 transition-colors">Insurance Restoration</a></li>
+                        <li><a href="service-kitchen.html" class="hover:text-bronze-500 transition-colors">Kitchen Remodeling</a></li>
+                        <li><a href="service-bath.html" class="hover:text-bronze-500 transition-colors">Bathroom Remodeling</a></li>
+                        <li><a href="service-new-construction.html" class="hover:text-bronze-500 transition-colors">New Construction</a></li>
+                        <li><a href="service-commercial.html" class="hover:text-bronze-500 transition-colors">Commercial</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-serif text-xl mb-6 text-white">Contact Us</h3>
+                    <ul class="space-y-4 text-stone-400 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-bronze-500 mt-1"></i>
+                            <span>Denver, CO & Surrounding Areas</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-bronze-500"></i>
+                            <a href="tel:7205840716" class="hover:text-white transition-colors">720-584-0716</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-bronze-500"></i>
+                            <a href="mailto:martinconstructionservice5280@gmail.com" class="hover:text-white transition-colors break-all">martinconstructionservice5280@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
 
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+            <div class="border-t border-stone-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-stone-500 uppercase tracking-widest">
+                <p>&copy; 2025 Martin Construction. All Rights Reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                </div>
             </div>
-
-            <div class="footer-col">
-                <h3>Contact Us</h3>
-                <p>📍 Denver, CO</p>
-                <p>📞 (555) 123-4567</p>
-                <p>✉️ info@martinconstructors.org</p>
-            </div>
-
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Martin Constructors. All Rights Reserved.</p>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            // Prevent scrolling when menu is open
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        mobileToggle.addEventListener('click', toggleMenu);
+        closeMobileMenu.addEventListener('click', toggleMenu);
+    </script>
 </body>
 </html>
